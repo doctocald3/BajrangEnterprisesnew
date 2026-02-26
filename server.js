@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-
+app.use('/images', express.static('images'));
 const server = http.createServer((req, res) => {
 
   let filePath = "";
@@ -51,4 +51,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(4000, () => {
   console.log("✅ Server running at http://localhost:4000");
+
 });
