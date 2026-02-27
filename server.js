@@ -2,8 +2,6 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
-// app.use('/images', express.static('images'));
-else if (cleanUrl.endsWith(".css") || cleanUrl.startsWith("/images/"))
 const server = http.createServer((req, res) => {
 
   let cleanUrl = req.url.replace(/\/$/, "");
@@ -22,7 +20,6 @@ const server = http.createServer((req, res) => {
     filePath = path.join(__dirname, "contact.html");
   }
   else {
-    // static files (css, images, etc)
     filePath = path.join(__dirname, cleanUrl);
   }
 
@@ -48,8 +45,7 @@ const server = http.createServer((req, res) => {
 
 });
 
-server.listen(4000, () => {
-  console.log("✅ Server running at http://localhost:4000");
+const PORT = process.env.PORT || 4000;
+server.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
 });
-
-
