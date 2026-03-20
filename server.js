@@ -2,7 +2,7 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const nodemailer = require("nodemailer");
-
+app.use(express.static("public"))
 const server = http.createServer((req, res) => {
 
   // ✅ FIRST HANDLE POST
