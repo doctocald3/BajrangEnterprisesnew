@@ -81,6 +81,9 @@ res.end();
      else if (cleanUrl === "/structural_glazing" || cleanUrl === "/structural_glazing.html") {
     filePath = path.join(__dirname, "structural_glazing.html");
   }
+          else if (cleanUrl === "/curtain_wall_glazing" || cleanUrl === "/curtain_wall_glazing.html") {
+    filePath = path.join(__dirname, "curtain_wall_glazing.html");
+  }
  else if (cleanUrl.endsWith(".css") || cleanUrl.startsWith("/images/")) {
     filePath = path.join(__dirname, cleanUrl.replace("/", ""));
   }
