@@ -78,12 +78,43 @@ res.end();
      else if (cleanUrl === "/spider-glazing" || cleanUrl === "/spider-glazing.html") {
     filePath = path.join(__dirname, "spider-glazing.html");
   }
-     else if (cleanUrl === "/structural_glazing" || cleanUrl === "/structural_glazing.html") {
+    else if (cleanUrl === "/structural_glazing" || cleanUrl === "/structural_glazing.html") {
     filePath = path.join(__dirname, "structural_glazing.html");
   }
-          else if (cleanUrl === "/curtain_wall_glazing" || cleanUrl === "/curtain_wall_glazing.html") {
+    else if (cleanUrl === "/curtain_wall_glazing" || cleanUrl === "/curtain_wall_glazing.html") {
     filePath = path.join(__dirname, "curtain_wall_glazing.html");
   }
+   else if (cleanUrl === "/acp_sheet" || cleanUrl === "/acp_sheet.html") {
+    filePath = path.join(__dirname, "acp_sheet.html");
+  }
+  else if (cleanUrl === "/hpl_sheet" || cleanUrl === "/hpl_sheet.html") {
+    filePath = path.join(__dirname, "hpl_sheet.html");
+  }
+  else if (cleanUrl === "/frameless_glass" || cleanUrl === "/frameless_glass.html") {
+    filePath = path.join(__dirname, "frameless_glass.html");
+  }
+   else if (cleanUrl === "/soundproof_glazing" || cleanUrl === "/soundproof_glazing.html") {
+    filePath = path.join(__dirname, "soundproof_glazing.html");
+  }
+  else if (cleanUrl === "/aluminium_window" || cleanUrl === "/aluminium_window.html") {
+    filePath = path.join(__dirname, "aluminium_window.html");
+  }
+   else if (cleanUrl === "/grid_ceiling" || cleanUrl === "/grid_ceiling.html") {
+    filePath = path.join(__dirname, "grid_ceiling.html");
+  }
+  else if (cleanUrl === "/gypsum_ceiling" || cleanUrl === "/gypsum_ceiling.html") {
+    filePath = path.join(__dirname, "gypsum_ceiling.html");
+  }
+   else if (cleanUrl === "/pop_ceiling" || cleanUrl === "/pop_ceiling.html") {
+    filePath = path.join(__dirname, "pop_ceiling.html");
+  }
+  else if (cleanUrl === "/pvc_ceiling" || cleanUrl === "/pvc_ceiling.html") {
+    filePath = path.join(__dirname, "pvc_ceiling.html");
+  }
+else if (cleanUrl === "/wpc_ceiling" || cleanUrl === "/wpc_ceiling.html") {
+    filePath = path.join(__dirname, "wpc_ceiling.html");
+  }
+  
  else if (cleanUrl.endsWith(".css") || cleanUrl.startsWith("/images/")) {
     filePath = path.join(__dirname, cleanUrl.replace("/", ""));
   }
