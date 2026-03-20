@@ -78,6 +78,9 @@ res.end();
      else if (cleanUrl === "/spider-glazing" || cleanUrl === "/spider-glazing.html") {
     filePath = path.join(__dirname, "spider-glazing.html");
   }
+     else if (cleanUrl === "/structural_glazing" || cleanUrl === "/structural_glazing.html") {
+    filePath = path.join(__dirname, "structural_glazing.html");
+  }
 else if (cleanUrl.startsWith("/products/")) {
   let fileName = cleanUrl.replace("/products/", "");
   filePath = path.join(__dirname, fileName + ".html");
