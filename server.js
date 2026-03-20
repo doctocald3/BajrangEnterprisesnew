@@ -81,10 +81,6 @@ res.end();
      else if (cleanUrl === "/structural_glazing" || cleanUrl === "/structural_glazing.html") {
     filePath = path.join(__dirname, "structural_glazing.html");
   }
-else if (cleanUrl.startsWith("/products/")) {
-  let fileName = cleanUrl.replace("/products/", "");
-  filePath = path.join(__dirname, fileName + ".html");
-}
   else if (cleanUrl.endsWith(".css") || cleanUrl.startsWith("/images/")) {
     filePath = path.join(__dirname, cleanUrl.replace("/", ""));
   }
