@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us | Bajrang Enterprises</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f6f9;line-height:1.6;}
+
+/* HEADER */
+header{
+  background:#0b132b;
+  padding:18px 0;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.logo h2{color:#ff8c00;}
+.logo span{color:#f7941d;font-size:13px;}
+
+nav{
+  display:flex;
+  align-items:left;
+}
+
+nav a{
+  color:#fff;
+  margin-left:25px;
+  text-decoration:none;
+  font-weight:500;
+}
+nav a:hover{color:#f7941d;transition:0.3s;}
+
+/* HERO */
+.hero{
+  height:60vh;
+  background:linear-gradient(rgba(11,19,43,0.8),rgba(11,19,43,0.8)),
+  url('https://images.unsplash.com/photo-1581092795360-fd1ca04f0952') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+.hero h1{font-size:42px;color:#f7941d;}
+.hero p{margin-top:10px;font-size:18px;}
+
+/* SECTION */
+.section{
+  padding:70px 10%;
+  background:#fff;
+  margin-bottom:30px;
+  border-radius:10px;
+}
+.section h2{
+  text-align:center;
+  font-size:36px;
+  margin-bottom:40px;
+  color:#ff8c00;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+.card{
+  background:#0b132b;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+}
+.card::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:4px;
+  background:#ff8c00;
+}
+
+/* FOOTER */
+footer{
+  background:#0b132b;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* MOBILE NAV */
+@media(max-width:768px){
+  nav{
+    width:100%;
+    display:none;
+    flex-direction:column;
+    margin-top:15px;
+  }
+  nav a{margin:10px 0;}
+  .menu-toggle{display:block;}
+  nav.active{display:flex;}
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown{
+  position:relative;
+  display:inline-block;
+}
+
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:35px;
+  left:0;
+  background:#111;
+  min-width:230px;
+  padding:10px 0;
+  z-index:999;
+}
+
+.dropdown-menu a{
+  display:block;
+  padding:8px 15px;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
+.dropdown-menu a:hover{
+  background:#333;
+}
+
+/* SUB DROPDOWN */
+.sub-dropdown{
+  position:relative;
+}
+.sub-menu{
+  display:none;
+  position:absolute;
+  top:0;
+  right:100%;
+  background:#222;
+  min-width:220px;
+}
+.sub-menu a{
+  display:block;
+  padding:8px 15px;
+  color:#fff;
+}
+.sub-menu a:hover{
+  background:#333;
+}
+
+/* HOVER SYSTEM */
+.dropdown:hover .dropdown-menu{
+  display:block;
+}
+.sub-dropdown:hover .sub-menu{
+  display:block;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <h2>Bajrang Enterprises®</h2>
+      <span>Transforming Glass Into Art</span>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <nav id="navMenu">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+
+       <div class="dropdown">
+        <a href="#">Products ▾</a>
+
+        <div class="dropdown-menu">
+
+          <div class="sub-dropdown">
+            <a href="#">Glazing ▸</a>
+            <div class="sub-menu">
+              <a href="/products/spider_glazing">Spider Glazing</a>
+              <a href="/products/structural_glazing">Structural Glazing</a>
+              <a href="/products/curtain_wall_glazing">Curtain Wall Glazing</a>
+            </div>
+          </div>
+
+          <div class="sub-dropdown">
+            <a href="#">Cladding ▸</a>
+            <div class="sub-menu">
+              <a href="/products/acp_sheet">ACP Sheet</a>
+              <a href="/products/hpl_sheet">HPL Sheet</a>
+            </div>
+          </div>
+
+          <div class="sub-dropdown">
+            <a href="#">Glass ▸</a>
+            <div class="sub-menu">
+              <a href="/products/frameless_glass">Frameless Glass Doors</a>
+            </div>
+          </div>
+
+          <div class="sub-dropdown">
+            <a href="#">Doors & Window ▸</a>
+            <div class="sub-menu">
+              <a href="/products/soundproof_glazing">Sound Proof Glazing</a>
+              <a href="/products/aluminium_window">Aluminium System Window</a>
+            </div>
+          </div>
+
+          <div class="sub-dropdown">
+            <a href="#">False Ceiling ▸</a>
+            <div class="sub-menu">
+              <a href="/products/grid_ceiling">Grid Ceiling</a>
+              <a href="/products/gypsum_ceiling">Gypsum Ceiling</a>
+              <a href="/products/pop_ceiling">POP Ceiling</a>
+              <a href="/products/pvc_ceiling">PVC Ceiling</a>
+              <a href="/products/wpc_ceiling">WPC Ceiling</a>
+            </div>
+          </div>
+
+          <a href="/products/ms_work">MS Work</a>
+          <a href="/products/ss_work">SS Work</a>
+
+        </div>
+      </div>
+<a href="/gallery">Projects / Gallery section</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>About Bajrang Enterprises</h1>
+    <p>Over 30 Years of Excellence in Aluminium & Glass Solutions</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Who We Are</h2>
+  <p>
+    Bajrang Enterprises is a trusted and well-established name in the aluminium 
+    and glass industry, delivering premium quality solutions for residential, 
+    commercial, and industrial projects since 1988.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Our Journey</h2>
+  <p>
+    Starting from a small fabrication unit, we have grown into a leading aluminium 
+    and glass solutions provider with decades of experience.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card"><i class="fa-solid fa-check"></i> Aluminium Doors & Windows</div>
+    <div class="card"><i class="fa-solid fa-check"></i> Structural Glazing</div>
+    <div class="card"><i class="fa-solid fa-check"></i> ACP Cladding</div>
+    <div class="card"><i class="fa-solid fa-check"></i> Glass Partitions & Office Cabins</div>
+    <div class="card"><i class="fa-solid fa-check"></i> Sliding Windows & Doors</div>
+    <div class="card"><i class="fa-solid fa-check"></i> Toughened Glass Work</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Why Choose Us</h2>
+  <div class="grid">
+    <div class="card"><i class="fa-solid fa-check"></i> 30+ Years of Experience</div>
+    <div class="card"><i class="fa-solid fa-check"></i> Skilled Workforce</div>
+    <div class="card"><i class="fa-solid fa-check"></i> High-Quality Materials</div>
+    <div class="card"><i class="fa-solid fa-check"></i> Modern Techniques</div>
+    <div class="card"><i class="fa-solid fa-check"></i> Timely Completion</div>
+    <div class="card"><i class="fa-solid fa-check"></i> Competitive Pricing</div>
+    <div class="card"><i class="fa-solid fa-check"></i> Customer Satisfaction</div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Bajrang Enterprises® | All Rights Reserved
+</footer>
+
+<script>
+const toggle=document.getElementById("menuToggle");
+const nav=document.getElementById("navMenu");
+toggle.addEventListener("click",()=>{nav.classList.toggle("active");});
+</script>
+
+</body>
+</html>
