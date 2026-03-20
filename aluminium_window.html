@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style.css">
+  <!-- Google Font (About page same) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ===== FONT ONLY ===== */
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ===== NAVBAR (ABOUT PAGE STYLE) ===== */
+    header {
+      background: #0b132b;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    header nav a:hover {
+      color: #ff8c00;
+      transition: 0.3s;
+    }
+
+    /* ================= DROPDOWN ================= */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background: #111;
+      min-width: 230px;
+      padding: 10px 0;
+      z-index: 999;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 15px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .dropdown-menu a:hover {
+      background: #333;
+    }
+
+    /* SUB DROPDOWN */
+    .sub-dropdown {
+      position: relative;
+    }
+
+    .sub-menu {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 100%;
+      background: #222;
+      min-width: 220px;
+    }
+
+    .sub-menu a {
+      display: block;
+      padding: 8px 15px;
+      color: #fff;
+    }
+
+    .sub-menu a:hover {
+      background: #333;
+    }
+
+    /* HOVER SYSTEM */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .sub-dropdown:hover .sub-menu {
+      display: block;
+    }
+
+
+    .product-hero {
+      height: 350px;
+      background: url("/images/59.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Dark overlay for better text visibility */
+    .product-hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    /* Content above overlay */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      color: #ff8c00;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      color: #ffffff;
+      text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .product-image img {
+      width: 100%;
+      border-radius: 10px;
+      transition: 0.4s;
+    }
+
+    .product-image img:hover {
+      transform: scale(1.05);
+    }
+
+    .product-text h2 {
+      margin-bottom: 20px;
+    }
+
+    .product-text ul {
+      margin: 20px 0;
+    }
+
+    .features {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .feature-grid {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .feature-card {
+      padding: 30px;
+      border-radius: 10px;
+      background: #0b132b;
+      transition: 0.4s;
+      color: #ff8c00;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+      background: #0b1c3d;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff6b00;
+    }
+
+    @media(max-width:768px) {
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid {
+        flex-direction: column;
+      }
+
+    }
+
+
+    /* MOBILE */
+    @media(max-width:768px) {
+      header .container {
+        flex-wrap: wrap;
+      }
+
+      nav {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        margin-top: 15px;
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h2>Bajrang Enterprises®</h2>
+        <span>Transforming Glass Into Art</span>
+      </div>
+
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <nav id="navMenu">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+
+        <div class="dropdown">
+          <a href="#">Products ▾</a>
+
+          <div class="dropdown-menu">
+
+            <div class="sub-dropdown">
+              <a href="#">Glazing ▸</a>
+              <div class="sub-menu">
+                <a href="/products/spider_glazing">Spider Glazing</a>
+                <a href="/products/structural_glazing">Structural Glazing</a>
+                <a href="/products/curtain_wall_glazing">Curtain Wall Glazing</a>
+              </div>
+            </div>
+
+            <div class="sub-dropdown">
+              <a href="#">Cladding ▸</a>
+              <div class="sub-menu">
+                <a href="/products/acp_sheet">ACP Sheet</a>
+                <a href="/products/hpl_sheet">HPL Sheet</a>
+              </div>
+            </div>
+
+            <div class="sub-dropdown">
+              <a href="#">Glass ▸</a>
+              <div class="sub-menu">
+                <a href="/products/frameless_glass">Frameless Glass Doors</a>
+              </div>
+            </div>
+
+            <div class="sub-dropdown">
+              <a href="#">Doors & Window ▸</a>
+              <div class="sub-menu">
+                <a href="/products/soundproof_glazing">Sound Proof Glazing</a>
+                <a href="/products/aluminium_window">Aluminium System Window</a>
+              </div>
+            </div>
+
+            <div class="sub-dropdown">
+              <a href="#">False Ceiling ▸</a>
+              <div class="sub-menu">
+                <a href="/products/grid_ceiling">Grid Ceiling</a>
+                <a href="/products/gypsum_ceiling">Gypsum Ceiling</a>
+                <a href="/products/pop_ceiling">POP Ceiling</a>
+                <a href="/products/pvc_ceiling">PVC Ceiling</a>
+                <a href="/products/wpc_ceiling">WPC Ceiling</a>
+              </div>
+            </div>
+
+            <a href="/products/ms_work">MS Work</a>
+            <a href="/products/ss_work">SS Work</a>
+
+          </div>
+        </div>
+        <a href="/gallery">Projects / Gallery section</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="product-hero">
+    <div class="hero-content">
+ <h1>Aluminium System Window</h1>
+<p>Modern and Durable Window Solution</p>
+    </div>
+  </section>
+  <br>
+  <section class="product-section mt-5">
+
+    <div class="container product-grid">
+
+      <div class="product-image">
+        <img src="/images/58.jpg">
+      </div>
+
+      <div class="product-text">
+
+   <h2>About Aluminium System Window</h2>
+
+<p>
+Aluminium system windows are a modern and highly durable window
+solution widely used in residential and commercial buildings.
+These windows are made with high-quality aluminium frames that
+provide excellent strength, stability, and long-lasting performance.
+</p>
+
+<p>
+Aluminium system windows are known for their sleek design,
+smooth functionality, and low maintenance requirements.
+They allow natural light and ventilation while enhancing
+the overall appearance of the building.
+</p>
+
+<ul>
+<li>Strong and Lightweight Aluminium Frames</li>
+<li>Smooth Sliding or Openable Window System</li>
+<li>Modern and Elegant Design</li>
+<li>Suitable for Homes, Offices, and Commercial Buildings</li>
+</ul>
+        <br>
+
+        <a href="/contact" class="btn">Get Quote</a>
+
+      </div>
+
+    </div>
+
+  </section>
+  <br>
+
+  <section class="features">
+
+    <h2>Key Features</h2>
+    <br>
+    <div class="feature-grid">
+
+ <div class="feature-card">
+<h3>Durable Aluminium Frame</h3>
+<p>Strong and long-lasting aluminium structure.</p>
+</div>
+
+<div class="feature-card">
+<h3>Modern Appearance</h3>
+<p>Enhances the architectural look of buildings.</p>
+</div>
+
+<div class="feature-card">
+<h3>Smooth Operation</h3>
+<p>High-quality fittings ensure smooth opening and closing.</p>
+</div>
+
+<div class="feature-card">
+<h3>Weather Resistant</h3>
+<p>Resistant to rain, sunlight, and environmental conditions.</p>
+</div>
+
+<div class="feature-card">
+<h3>Low Maintenance</h3>
+<p>Easy to clean and maintain for long-term use.</p>
+</div>
+
+    </div>
+
+  </section>
+
+
+  <a href="https://wa.me/919871088186" class="whatsapp">WhatsApp</a>
+
+  <footer>
+    © 2025 Bajrang Enterprises®
+  </footer>
+
+  <script>
+
+    // MOBILE PRODUCTS CLICK
+    document.querySelectorAll(".dropdown > a").forEach(item => {
+      item.addEventListener("click", function (e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          this.parentElement.classList.toggle("active");
+        }
+      });
+    });
+
+    document.querySelectorAll(".sub-dropdown > a").forEach(item => {
+      item.addEventListener("click", function (e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          this.parentElement.classList.toggle("active");
+        }
+      });
+    });
+
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+  </script>
+</body>
+
+</html>
