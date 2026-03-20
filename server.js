@@ -76,8 +76,8 @@ res.end();
     filePath = path.join(__dirname, "contact.html");
   }
 else if (cleanUrl.startsWith("/products/")) {
-  let fileName = cleanUrl.replace("/products/", ""); // spider-glazing
-  filePath = path.join(__dirname, "products", fileName + ".html");
+  let fileName = cleanUrl.replace("/products/", "");
+  filePath = path.join(__dirname, fileName + ".html");
 }
   else if (cleanUrl.endsWith(".css") || cleanUrl.startsWith("/images/")) {
     filePath = path.join(__dirname, cleanUrl.replace("/", ""));
