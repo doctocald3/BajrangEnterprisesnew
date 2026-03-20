@@ -81,9 +81,15 @@ res.end();
      else if (cleanUrl === "/structural_glazing" || cleanUrl === "/structural_glazing.html") {
     filePath = path.join(__dirname, "structural_glazing.html");
   }
-  else if (cleanUrl.endsWith(".css") || cleanUrl.startsWith("/images/")) {
-    filePath = path.join(__dirname, cleanUrl.replace("/", ""));
-  }
+ else if (
+  cleanUrl.endsWith(".css") ||
+  cleanUrl.endsWith(".jpg") ||
+  cleanUrl.endsWith(".jpeg") ||
+  cleanUrl.endsWith(".png") ||
+  cleanUrl.endsWith(".gif")
+) {
+  filePath = path.join(__dirname, cleanUrl);
+}
   else {
     res.writeHead(404, { "Content-Type": "text/html" });
     res.end("<h1>404 - Page Not Found</h1>");
