@@ -76,8 +76,7 @@ res.end();
     filePath = path.join(__dirname, "contact.html");
   }
 else if (cleanUrl.startsWith("/products/")) {
-  let fixedUrl = cleanUrl.replace(/-/g, "_"); // hyphen → underscore
-  filePath = path.join(__dirname, fixedUrl) + ".html";
+  filePath = path.join(__dirname, cleanUrl) + ".html";
 }
   else if (cleanUrl.endsWith(".css") || cleanUrl.startsWith("/images/")) {
     filePath = path.join(__dirname, cleanUrl.replace("/", ""));
