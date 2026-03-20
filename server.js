@@ -75,8 +75,9 @@ res.end();
   else if (cleanUrl === "/contact" || cleanUrl === "/contact.html") {
     filePath = path.join(__dirname, "contact.html");
   }
- else if (cleanUrl.startsWith("/products/")) {
-  filePath = path.join(__dirname, cleanUrl) + ".html";
+else if (cleanUrl.startsWith("/products/")) {
+  let fixedUrl = cleanUrl.replace(/-/g, "_"); 
+  filePath = path.join(__dirname, fixedUrl) + ".html";
 }
   else if (cleanUrl.endsWith(".css") || cleanUrl.startsWith("/images/")) {
     filePath = path.join(__dirname, cleanUrl.replace("/", ""));
